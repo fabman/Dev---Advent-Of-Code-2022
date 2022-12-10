@@ -28,7 +28,7 @@
  * Elf's inventory (if any) by a blank line.
  *
  */
-package cc.fabian.adventofcode01;
+package cc.fabian.adventofcode01_part1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,29 +40,29 @@ import java.util.Scanner;
  *
  *
  */
-public class AdventOfCode01 {
+public class AdventOfCode01_part1 {
 
     public static void main(String[] args) {
 
         Scanner inputData = null;
 
         try {
-            inputData = new Scanner(new File("..\\..\\..\\..\\..\\input.txt"));
+            inputData = new Scanner(new File("input.txt"));
         } catch (FileNotFoundException ex) {
             System.out.println("File not Found");
         }
 
-        double currentSum = 0;
-        double lastSum = 0;
+        int currentSum = 0;
+        int lastSum = 0;
         while (inputData.hasNextLine()) {
             String lineRead = inputData.nextLine();
             if (lineRead == "") {
-                lastSum = (currentSum>lastSum)?currentSum:lastSum;
+                lastSum = (currentSum>lastSum)?currentSum:lastSum;                
                 currentSum = 0;
             } else {
                 currentSum += Integer.parseInt(lineRead);
             }
         }
-        System.out.printf( "%.0f", lastSum );
+        System.out.printf( "%d", lastSum );
     }
 }
