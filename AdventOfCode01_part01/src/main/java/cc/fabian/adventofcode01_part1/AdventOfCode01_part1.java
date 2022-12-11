@@ -56,7 +56,7 @@ public class AdventOfCode01_part1 {
         int lastSum = 0;
         while (inputData.hasNextLine()) {
             String lineRead = inputData.nextLine();
-            if (lineRead == "") {
+            if ("".equals(lineRead)) {
                 lastSum = (currentSum>lastSum)?currentSum:lastSum;                
                 currentSum = 0;
             } else {
